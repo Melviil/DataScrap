@@ -1,0 +1,23 @@
+{
+"name" :"Linkedin Data",
+"version" : "1.0",
+"manifest_version" : 2,
+"browser_action": {
+      "default_title": "Linkedin Data",
+      "default_icon": "Images/logo.png",
+      "default_popup": "popup.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+"permissions": ["tabs", "storage", "<all_urls>"],
+"description" :"Application allowing you to keep track of the profiles you went through during your Linkedin searches",
+"background": {
+    "scripts":["background.js"]
+  },
+"content_scripts" : [
+	{
+		"matches": ["http://*/*", "https://*/*"],
+		"js": ["jquery.js","script.js"]
+	}
+]
+
+}
